@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title></title>
+	<script type="text/javascript">
+		$(document).ready(function()){$("#username").focus()});
+		function check_login()
+		{
+			$.ajax
+			({
+				type:"POST",
+				data:"username="+$("#username").val()+"&password="+$(#password).val,
+				success:function(response)
+				{
+					if(response=="1"){$("$error").css({"color":"red","display":"block"}).h
+						else if (response=="2"){$('#error').css({'color':'red','display':'block'}).html('Login credentials incorrect!')}
+						else if(response=='3'){$('#error').css({'color':'red','display':'block'}).html('Please fill in all fields')}
+				}
+			})
+		}
+
+	</script>
+	</head>
+	<body>
+
+		<form onsubmit="check_login();return false;" action="login.php">
+			<label>Username:</label>
+			<input type="text" name="username" id="username"/>
+
+			<label>Password:</label>
+			<input type="text" name="password" id="password" />
+
+			<input type="submit" name="submit" id="submit" />
+		</form>
+
+	</body>
+
+</html>
