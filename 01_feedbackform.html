@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Feedback Form</title>
+<script type="text/javascript">
+
+//thanks : http://www.w3resource.com/ajax/using-XML.php
+
+//function to collect data from web form
+function collection() 
+	{
+		var name, email;
+		name = document.getElementById("name").value;
+		email = document.getElementById("email").value);
+	}
+
+//creating XMLhttpRequest object (xhr)
+	var xhr 
+		if(window.XMLhttpRequest)
+		{
+			xhr = new XMLhttpRequest; // Mozilla, Safari
+		}
+
+		else if (window.ActiveXobject)
+		{
+			xhr = new ActiveXobject("Microsoft.XMLHTTP");
+		}
+
+//creating the XML string
+	xmlString = "<invalid>" + "<email>" + escape(email) + "</email>";
+
+//alert(data);
+	//Build the URL to connect to
+	var url = "submit.php";
+
+	//open a connection to the server
+	xhr.open("POST",xhr,true);
+
+	//declaring that the data being sent is in XML format
+	xhr.setRequestHeader("Content-Type","text/xml");
+
+	//send the request
+	xhr.send(xmlstring);
+
+
+
+
+
+</script>
+
+
+</head>
+
+<body>
+	<h2>Feedback Form</h2>
+	<p>Please fill out this form to help us improve our site.</p>
+	<form id="xml-ajax" name="xml-ajax" action="submit.php" method="post" onsubmit="SendToServer()">
+		Email: <input type="text" name="email" id="email" /> <br/>
+		Comments:<br/>
+		<textarea rows="4" cols="50" name="message" id="comments"> </textarea><br/>
+
+		<h3>Things you liked:</h3>
+		<input type="checkbox" name="preference" value="sitedesign" id="sitedesign"> Site Design <br/>
+		<input type="checkbox" name="preference" value="links" id="links"> Links <br/>
+		<input type="checkbox" name="preference" value="easeofuse" id="easeoffuse"> Ease of use <br/>
+		<input type="checkbox" name="preference" value="images" id="images"> Images <br/>
+		<input type="checkbox" name="preference" value="sourcecode" id="sourcecode"> Source code <br/>
+
+		<h3>How did you get to our site?</h3>
+		<input type="radio" name="media" value="searchengine" id="searchengine"> Search engine<br/>
+		<input type="radio" name="media" value="url" id="url"> Links from another site<br/>
+		<input type="radio" name="media" value="deitel" id="deitel"> Deitel.com website<br/>
+		<input type="radio" name="media" value="book" id="book"> Reference in a book<br/>
+		<input type="radio" name="media" value="other" id="other"> Other<br/>
+
+		<h3>Rate our site</h3>
+		<select name="rating" id="rating">
+			<option value="amazing"> Amazing</option>
+			<option value="10">		1		</option>
+			<option value="9">		2		</option>
+			<option value="8"> 		3		</option>
+			<option value="7">		4		</option>
+			<option value="6">		5 		</option>
+			<option value="5">		6		</option>
+			<option value="4">		7		</option>
+			<option value="3">		8		</option>
+			<option value="2">		9		</option>
+			<option value="1">		10		</option>
+			<option value="awful">Awful 	</option>
+		</select>
+		<br/>
+		<br/>
+		<input type="submit" name="submit" value="Send" id="submit" /> <br/>
+		
+
+
+
+
+
+
+	</form>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+</body>
+
+</html>
