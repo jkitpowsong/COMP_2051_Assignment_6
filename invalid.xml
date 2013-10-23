@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<invalid>
+		<email> invalid01@dummy.com</email>
+		<email> invalid02@dummy.com</email>
+		<email> invalid03@dummy.com</email>
+		<email> invalid04@dummy.com</email>
+		<email> yinvalid04@dummy.com</email>
+	</invalid>
